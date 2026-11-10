@@ -1,0 +1,83 @@
+<mjml>
+  <mj-head>
+    <mj-title>New {{request_label}} from {{lead_name}}</mj-title>
+    <mj-preview>{{lead_name}}{{lead_company}} asked about {{lead_interest}}</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, Arial, sans-serif" />
+      <mj-section background-color="#ffffff" padding="0 32px" />
+      <mj-text color="#000000" font-size="15px" line-height="1.6" padding="0" />
+      <mj-button background-color="#000000" color="#ffffff" border-radius="4px" font-weight="700" inner-padding="14px 26px" align="left" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#f6f7f9">
+    <mj-section background-color="#111111" padding="22px 32px">
+      <mj-column>
+        <mj-image src="https://media.base44.com/images/public/6ad9c9ed02cdff15ed8c567c/d3a2aafed_logo.png" width="150px" align="left" padding="0" alt="Demore Technology Solutions" />
+        <mj-text color="#ffffff" font-size="14px" font-weight="700" padding="12px 0 0">Demore Technology Solutions</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="32px 32px 8px">
+      <mj-column>
+        <mj-text font-size="26px" font-weight="700" padding="0">New {{request_label}}</mj-text>
+        <mj-text color="#6b7280" padding="8px 0 0">Hi {{first_name}}, {{lead_name}} just came through the website. The details are below.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="8px 32px 0">
+      <mj-column background-color="#ffffff" border="1px solid #e5e7eb" border-radius="4px" padding="24px">
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Name</mj-text></mj-column>
+          <mj-column width="60%"><mj-text font-weight="700" padding="0 0 10px">{{lead_name}}</mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Company</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px">{{lead_company}}</mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Email</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px"><a href="mailto:{{lead_email}}" style="color:#000000">{{lead_email}}</a></mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Phone</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px">{{lead_phone}}</mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Interest</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px">{{lead_interest}}</mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Website</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px">{{lead_website}}</mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Location</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px">{{lead_location}}</mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Timeline</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px">{{lead_timeline}}</mj-text></mj-column>
+        </mj-group>
+        <mj-group>
+          <mj-column width="40%"><mj-text color="#6b7280" font-size="13px" padding="0 0 10px">Page</mj-text></mj-column>
+          <mj-column width="60%"><mj-text padding="0 0 10px">{{source_page}}</mj-text></mj-column>
+        </mj-group>
+        <mj-text color="#6b7280" font-size="13px" padding="16px 0 6px">Message</mj-text>
+        <mj-text padding="0">{{lead_message}}</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="20px 32px 8px">
+      <mj-column>
+        <mj-button href="{{workspace_url}}">Open the lead engine</mj-button>
+        <mj-text color="#6b7280" font-size="13px" padding="14px 0 0">Recommended next step: confirm the request, then set a follow-up date on the lead record.</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding="16px 32px 32px">
+      <mj-column>
+        <mj-text color="#6b7280" font-size="12px" padding="0">{{submitted_at}} · This notification was sent from the Demore Technology Solutions website.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

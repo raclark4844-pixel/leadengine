@@ -1,0 +1,83 @@
+{
+  "name": "Campaign",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Campaign name"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Customer the campaign belongs to"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "offer": {
+      "type": "string",
+      "description": "Offer the campaign promotes"
+    },
+    "territory": {
+      "type": "string",
+      "description": "Counties, ZIP codes, cities, or states"
+    },
+    "lead_goal": {
+      "type": "number"
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "current",
+        "past"
+      ],
+      "default": "draft"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "is_example": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "customer_name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

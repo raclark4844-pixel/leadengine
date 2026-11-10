@@ -1,0 +1,119 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Person who submitted the request, or the sourced contact's name"
+    },
+    "email": {
+      "type": "string",
+      "description": "Contact email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "request_type": {
+      "type": "string",
+      "enum": [
+        "project_brief",
+        "contact",
+        "campaign_followup",
+        "website_review",
+        "comparison",
+        "property_lead"
+      ],
+      "default": "contact"
+    },
+    "need": {
+      "type": "string",
+      "description": "What the business wants built or improved"
+    },
+    "message": {
+      "type": "string"
+    },
+    "budget": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "string"
+    },
+    "target_city": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string",
+      "description": "Property or mailing address for sourced leads"
+    },
+    "source_page": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewing",
+        "contacted",
+        "qualified",
+        "handed_off",
+        "closed"
+      ],
+      "default": "new"
+    },
+    "owner": {
+      "type": "string",
+      "description": "Team member responsible for the next step"
+    },
+    "follow_up_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "handoff_summary": {
+      "type": "string",
+      "description": "Useful handoff note with the request and contact details"
+    },
+    "campaign_id": {
+      "type": "string"
+    },
+    "campaign_name": {
+      "type": "string"
+    },
+    "review_id": {
+      "type": "string"
+    },
+    "enrichment": {
+      "type": "object",
+      "description": "BatchData enrichment results and calling compliance flags"
+    }
+  },
+  "required": [
+    "full_name"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

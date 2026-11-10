@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 60 12% 95%;
+    --card: 0 0% 5%;
+    --card-foreground: 60 12% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 60 12% 95%;
+    --primary: 157 100% 50%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 60 12% 95%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 60 2% 54%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 60 12% 95%;
+    --destructive: 355 100% 58%;
+    --destructive-foreground: 60 12% 95%;
+    --border: 60 3% 16%;
+    --input: 60 3% 16%;
+    --ring: 157 100% 50%;
+    --radius: 0.75rem;
+
+    --hot: 355 100% 58%;
+    --hot-dim: 351 71% 13%;
+    --volt: 157 100% 50%;
+    --volt-dim: 156 86% 11%;
+    --sun: 50 100% 65%;
+    --flare: 25 100% 50%;
+    --flare-dim: 25 100% 11%;
+    --ink: 0 0% 2%;
+    --surface: 0 0% 5%;
+    --elevated: 0 0% 8%;
+    --line: 60 3% 16%;
+    --faint: 60 2% 46%;
+
+    --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'Syne', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --chart-1: 157 100% 50%;
+    --chart-2: 355 100% 58%;
+    --chart-3: 25 100% 50%;
+    --chart-4: 50 100% 65%;
+    --chart-5: 0 0% 54%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 60 12% 95%;
+    --sidebar-primary: 157 100% 50%;
+    --sidebar-primary-foreground: 0 0% 2%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 60 12% 95%;
+    --sidebar-border: 60 3% 16%;
+    --sidebar-ring: 157 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 2%;
+    --foreground: 60 12% 95%;
+    --card: 0 0% 5%;
+    --card-foreground: 60 12% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 60 12% 95%;
+    --primary: 157 100% 50%;
+    --primary-foreground: 0 0% 2%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 60 12% 95%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 60 2% 54%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 60 12% 95%;
+    --destructive: 355 100% 58%;
+    --destructive-foreground: 60 12% 95%;
+    --border: 60 3% 16%;
+    --input: 60 3% 16%;
+    --ring: 157 100% 50%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    background: hsl(var(--ink));
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+  }
+
+  ::selection {
+    background: hsl(var(--hot));
+    color: hsl(var(--foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--volt));
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .kicker {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(48px);
+    pointer-events: none;
+    animation: orb-drift 16s ease-in-out infinite;
+  }
+
+  .panel {
+    border: 1px solid hsl(var(--line));
+    background: hsl(var(--surface));
+    border-radius: 1.25rem;
+  }
+
+  .panel-raised {
+    border: 1px solid hsl(var(--line));
+    background: hsl(var(--elevated));
+    border-radius: 1.25rem;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 1.75rem;
+    border: 1px solid hsl(var(--line));
+    border-radius: 999px;
+    padding: 0 0.75rem;
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .chip-volt {
+    border-color: color-mix(in oklab, hsl(var(--volt)) 40%, transparent);
+    color: hsl(var(--volt));
+  }
+
+  .btn-volt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    background: hsl(var(--volt));
+    color: hsl(var(--ink));
+    font-weight: 600;
+    padding: 0.8rem 1.4rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .btn-volt:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 30px color-mix(in oklab, hsl(var(--volt)) 30%, transparent);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid hsl(var(--line));
+    color: hsl(var(--foreground));
+    font-weight: 500;
+    padding: 0.8rem 1.4rem;
+    transition: border-color 0.18s ease, background 0.18s ease;
+  }
+
+  .btn-ghost:hover {
+    border-color: hsl(var(--faint));
+    background: hsl(var(--surface));
+  }
+}
+
+@keyframes orb-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(14px, -20px, 0) scale(1.07);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb {
+    animation: none !important;
+  }
+}

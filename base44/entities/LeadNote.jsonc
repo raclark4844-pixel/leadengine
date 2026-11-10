@@ -1,0 +1,55 @@
+{
+  "name": "LeadNote",
+  "type": "object",
+  "properties": {
+    "lead_id": {
+      "type": "string",
+      "description": "Lead this activity belongs to"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "note",
+        "call",
+        "email",
+        "sms",
+        "handoff",
+        "status",
+        "enrich"
+      ],
+      "default": "note"
+    },
+    "body": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "lead_id",
+    "body"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
